@@ -21,70 +21,70 @@ This project implements a **smart contract-based crafting and trading system** o
 ## 🚀 How to Deploy the Project
 
 ### 1. Clone the repository
-\`\`\`bash
+```bash
 git clone https://github.com/yourusername/blockchain-rpg-game.git
 cd blockchain-rpg-game
-\`\`\`
+```
 
 ### 2. Install dependencies
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ### 3. Compile contracts
-\`\`\`bash
+```bash
 npx hardhat compile
-\`\`\`
+```
 
 ### 4. Deploy to Sepolia
 Set your Sepolia RPC and wallet private key in .env or hardhat.config.ts.
-\`\`\`bash
+```bash
 npx hardhat run --network sepolia scripts/deploy.ts
-\`\`\`
+```
 
 - Deployment script PRINTS ALL COMMANDS THAT YOU NEED TO RUN NEXT.
 
 ### 5. Replace the adresses in the frontend/data/constants.ts by new ones
-\`\`\`typescript
+```typescript
 export const RESOURCE_NFT_ADDRESS = "0x47c7f53369Cda54407E9E127E2655D393C1EB2aE";
 export const ITEM_NFT_ADDRESS = "0xDE647D4499c9Cf0B12f04AA7F8fcE0C5391F8994";
 export const MAGIC_TOKEN_ADDRESS = "0x022Cd2dc689195b93DbC34179f70a0ffa69616B7";
 export const CRAFTING_CONTRACT_ADDRESS = "0x4eF6c28Cc44D671d547d604705E092487c9E80f9";
 export const MARKETPLACE_ADDRESS = "0xBf98217626c6471dB4a16E1A44ee5696067a612a";
-\`\`\`
+```
 
 ---
 
 ## 🕹️ How to Play / Use the Contracts
 
 1. **Search for Resources**
-   - Call \`searchResources()\` in \`CraftingAndSearch\` to get random resources (wait 60s between uses).
+   - Call `searchResources()` in `CraftingAndSearch` to get random resources (wait 60s between uses).
 
 2. **Craft Items**
-   - Use functions in \`CraftingAndSearch\`:  
-     - \`craftCossackSaber()\`  
-     - \`craftEldersStaff()\`  
-     - \`craftCharacternykArmor()\`  
-     - \`craftBattleBracelet()\`  
+   - Use functions in `CraftingAndSearch`:  
+     - `craftCossackSaber()`  
+     - `craftEldersStaff()`  
+     - `craftCharacternykArmor()`  
+     - `craftBattleBracelet()`  
 
 3. **Trade/Sell Items**
-   - Call \`sellItem(tokenId, price)\` in \`Marketplace\` contract.
+   - Call `sellItem(tokenId, price)` in `Marketplace` contract.
    - Receive MagicTokens when your NFT is burned.
 
 4. **Send NFTs**
-   - Use \`safeTransferFrom()\` in \`ItemNFT721\` to send items to another wallet.
+   - Use `safeTransferFrom()` in `ItemNFT721` to send items to another wallet.
 
 
 ## 🧪 How to Run Tests (Coverage 100%)
 
-\`\`\`bash
+```bash
 npx hardhat coverage
-\`\`\`
+```
 
 
 ## 📄 Contract Source Code
 
-All contracts are in the \`/contracts\` folder.  
+All contracts are in the `/contracts` folder.  
 NatSpec documentation is provided in each Solidity file.
 
 
